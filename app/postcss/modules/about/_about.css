@@ -1,0 +1,44 @@
+.about {
+   background-color: $mainGreen;
+   &__flex-container {
+      display: flex;
+      flex-direction: column;
+      @media (--tablet) {
+         flex-direction: row;
+      }
+   }
+   &__column {
+      @media (--tablet) {
+         width: 50%;
+         &:first-child {
+            padding-right: 30px;
+         }
+         &:last-child {
+            padding-left: 30px;
+         }
+      }
+   }
+
+   &__column-title {
+      font-weight: normal;
+      padding-bottom: 26px;
+   }
+
+   &__column-spacing {
+      padding-bottom: 26px;
+   }
+
+   &__list {
+      /* Indent the bullets */
+      /* padding-left: 1.35rem; */
+      @include typog-mobile-body;
+      @media (--tablet) {
+         @include typog-desktop-body;
+      }
+   }
+
+   &--color-white {
+      color: $white;
+      font-weight: 300;
+   }
+}

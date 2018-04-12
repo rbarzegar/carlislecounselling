@@ -1,0 +1,84 @@
+.main-navigation {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   background-color: $black;
+   color: $white;
+
+   /* Don't display the main menu in tablet view */
+   @media (--tablet-only) {
+      flex-direction: column;
+      text-align: center;
+      height: 0;
+      overflow: hidden;
+   }
+
+   @media (--desktop) {
+      width: inherit;
+      justify-content: flex-end;
+      background-color: transparent;
+      color: $black;
+      margin-right: 10%;
+   }
+
+   /* Styling the main menu items */
+   &__item {
+      padding: 15px 25px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+      &:hover,
+      &:focus {
+         color: $mainGreen;
+      }
+      @include typog-mobile-body;
+      @media (--tablet) {
+         @include typog-desktop-body;
+         &:last-child {
+            padding-right: 0;
+         }
+      }
+
+      /* Styling the tablet version */
+      @media (--tablet-only) {
+         padding: 20px 0;
+      }
+   }
+
+   &--logo {
+      overflow: hidden;
+      margin: auto 0 auto -6px;
+      padding: 0;
+      background-color: $white;
+      transition: all 0.3s;
+      font-weight: 700;
+      max-width: 0;
+      &:link,
+      &:visited {
+         color: $mainGreen;
+      }
+
+      @media (--tablet) {
+         display: none;
+      }
+   }
+}
+
+/* Slide down toggler class for tablet views */
+.slideDown {
+   height: 100%;
+}
+
+/* Fixed nav class for mobile views */
+@media (--mobile) {
+   .fixed-nav .main-navigation {
+      position: fixed;
+      justify-content: space-between;
+      top: 0;
+      box-shadow: 0 3px rgba(0, 0, 0, 0.1);
+   }
+
+   .fixed-nav .main-navigation--logo {
+      padding: 15px 25px;
+      max-width: 500px;      
+   }
+}

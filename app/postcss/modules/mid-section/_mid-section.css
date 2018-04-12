@@ -1,0 +1,12 @@
+.mid-section {
+   background-color: $black;
+   color: $white;
+   font-weight: 300;
+   letter-spacing: $body-letter-spacing;
+   &__body {
+      text-align: center;
+      @media (--tablet) {
+         text-align: left;
+      }
+   }
+}

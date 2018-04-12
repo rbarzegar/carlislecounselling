@@ -1,0 +1,58 @@
+#hamburger {
+   position: relative;
+   width: 40px;
+   height: 20px;
+   position: relative;
+   transform: rotate(0deg);
+   transition: .5s ease-in-out;
+   cursor: pointer;
+
+   & span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $black;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+   }
+   & span:nth-child(1) {
+      top: 0px;
+   }
+   & span:nth-child(2) {
+      top: 12px;
+   }
+   & span:nth-child(3) {
+      top: 24px;
+   }
+   &.open span:nth-child(1) {
+      top: 18px;
+      transform: rotate(135deg);
+   }
+   &.open span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+   }
+   &.open span:nth-child(3) {
+      top: 18px;
+      transform: rotate(-135deg);
+   }
+}
+
+
+.hamburger {
+   /* Hamburger menu icon */
+   &__toggler {
+      display: none;
+      float: right;
+      @media (--tablet-only) {
+         display: block;
+         position: absolute;
+         top: 22px;
+         margin-right: 5%;
+      }
+   }
+}

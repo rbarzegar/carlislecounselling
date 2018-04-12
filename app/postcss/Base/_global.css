@@ -1,0 +1,23 @@
+/***** Simple CSS reset *****/
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a:link, a:visited, a:hover, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main {
+    position: relative;
+}

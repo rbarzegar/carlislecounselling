@@ -1,0 +1,13 @@
+.benefits {
+   text-align: center;
+   letter-spacing: $body-letter-spacing;
+   &__title {
+      @include section-title;
+   }
+   
+   &__body {
+      @media (--tablet) {
+         text-align: left;
+      }
+   }
+}
